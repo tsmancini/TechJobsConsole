@@ -118,7 +118,28 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            Console.WriteLine("PrintJobs is not implemented yet");
+            //count somejobs, as long as it is not zero. GREATER than zero seems to also work.
+            if (someJobs.Count != 0)
+            {
+                // for each dictionary with string string (keyword, job) in someJobs parameter, print *****
+                foreach (Dictionary<string, string> job in someJobs)
+                {
+                    Console.WriteLine("*****");
+                    // then new line, for each loop for the keyvalue pairs
+                    foreach (KeyValuePair<string, string> jobStuff in job)
+                    {
+                        Console.WriteLine(jobStuff.Key + ": " + jobStuff.Value);
+                    }
+                    // follow up with the same printing of *****
+                    Console.WriteLine("*****\n");
+                }
+            }
+            // finally if the count of the list is zero, print a message to say there is nothing
+            // might also be worth it to just say ELSE print, instead of else if, in case something else happened to where it was equal to zero? but i dont think it makes any difference actually. this is more accurate anyways
+            else if (someJobs.Count == 0)
+            {
+                Console.Write("No results found\n");
+            }
         }
     }
 }
