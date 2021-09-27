@@ -117,13 +117,13 @@ namespace TechJobsConsole
             return choiceKeys[choiceIdx];
         }
 
-        private static void PrintJobs(List<Dictionary<string, string>> someJobs)
+        private static void PrintJobs(List<Dictionary<string, string>> theJobs)
         {
             //count somejobs, as long as it is not zero. GREATER than zero seems to also work.
-            if (someJobs.Count != 0)
+            if (theJobs.Count != 0)
             {
                 // for each dictionary with string string (keyword, job) in someJobs parameter, print *****
-                foreach (Dictionary<string, string> job in someJobs)
+                foreach (Dictionary<string, string> job in theJobs)
                 {
                     Console.WriteLine("*****");
                     // then new line, for each loop for the keyvalue pairs
@@ -137,7 +137,7 @@ namespace TechJobsConsole
             }
             // finally if the count of the list is zero, print a message to say there is nothing
             // might also be worth it to just say ELSE print, instead of else if, in case something else happened to where it was equal to zero? but i dont think it makes any difference actually. this is more accurate anyways
-            else if (someJobs.Count == 0)
+            else if (theJobs.Count == 0)
             {
                 Console.Write("No results found\n");
             }
